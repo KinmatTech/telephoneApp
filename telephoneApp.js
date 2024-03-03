@@ -1,11 +1,11 @@
-// Observer Settings
+// Observer Settings Class
 class Observer {
     update(phoneNumber) {
       // to be executed by actual observers
     }
   }
   
-  // Actual Observer 1
+  // Class of Actual Observer 1
   class PrintPhoneNumberObserver extends Observer {    
     update(phoneNumber) {
       console.log(" ");
@@ -13,7 +13,7 @@ class Observer {
     }
   }
   
-  // Actual Observer 2
+  // Class of Actual Observer 2
   class CustomMessageObserver extends Observer {
     update(phoneNumber) {
       console.log(`Now Dialing: ${phoneNumber}`);
@@ -70,9 +70,9 @@ class Observer {
   const observer1 = new PrintPhoneNumberObserver();
   const observer2 = new CustomMessageObserver();
   
+  // Adding observers to the phone number
   telephone.addObserver(observer1);
   telephone.addObserver(observer2);
   
   telephone.addPhoneNumber("+2347034567890");
-  
   telephone.dialPhoneNumber("+2347034567890");
